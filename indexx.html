@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCheck - Medicine Allergy Detection</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+   
+</head>
+<body>
+    <nav class="navbar"]=/////////////////////////////////////////////////////////////////////////////////////////////[]
+        <div class="container">
+            <a href="#" class="navbar-brand" id="home-link">
+                <i class="fas fa-shield-virus"></i> MediCheck
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="dashboard-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="search-link">Check Medicine</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="profile-link">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="history-link">History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="logout-link">Logout</a>
+                </li>
+                <li class="nav-item" id="login-item" style="display: none;">
+                    <a href="#" class="nav-link" id="login-link">Login</a>
+                </li>
+                <li class="nav-item" id="signup-item" style="display: none;">
+                    <a href="#" class="nav-link" id="signup-link">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div id="alert-container"></div>
+        
+        <!-- Content sections -->
+        <div id="home-content">
+            <div class="hero">
+                <h1 class="hero-title">Medicine Composition and Allergy Detection System</h1>
+                <p class="hero-subtitle">Stay safe by checking if your medications contain ingredients you're allergic to</p>
+                <a href="#" class="btn btn-secondary" id="hero-signup-btn">Create Account</a>
+                <a href="#" class="btn btn-outline" id="hero-login-btn">Login</a>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="feature-title">Medicine Analysis</h3>
+                    <p class="feature-desc">Quickly analyze medicine compositions and identify ingredients that may cause allergic reactions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="feature-title">Personal Profile</h3>
+                    <p class="feature-desc">Create your personalized allergy profile to get accurate results based on your specific allergies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="feature-title">Search History</h3>
+                    <p class="feature-desc">Keep track of all your previous searches and their results for future reference.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">How It Works</h2>
+                <p>Using MediCheck is simple:</p>
+                <ol style="margin-left: 20px; line-height: 1.6;">
+                    <li>Create a free account and add your known allergies</li>
+                    <li>Search for a medicine from our extensive database</li>
+                    <li>Get instant feedback on whether the medicine contains allergens you're sensitive to</li>
+                    <li>View detailed information about potential allergic ingredients</li>
+                    <li>Save your results for future reference</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div id="login-content" style="display: none;">
+            <div class="card" style="max-width: 500px; margin: 60px auto;">
+                <h2 class="card-title">Login to Your Account</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px;">
+                    Don't have an account? <a href="#" id="to-signup-link">Sign up here</a>
+                </p>
+            </div>
+        </div>
+        
+        <div id="signup-content" style="display: none;">
+            <div class="card" style="max-width: 500px; margin: 60px auto;">
+                <h2 class="card-title">Create a New Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="new-username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="new-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="new-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px;">
+                    Already have an account? <a href="#" id="to-login-link">Login here</a>
+                </p>
+            </div>
+        </div>
+        
+        <div id="dashboard-content" style="display: none;">
+            <h1 style="margin-bottom: 25px;">Welcome, <span id="user-name">User</span>!</h1>
+            
+            <div class="card">
+                <h2 class="card-title">Quick Actions</h2>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" id="quick-search">
+                        <i class="fas fa-search"></i> Check Medicine
+                    </a>
+                    <a href="#" class="btn btn-secondary" id="quick-profile">
+                        <i class="fas fa-user-circle"></i> Manage Allergies
+                    </a>
+                    <a href="#" class="btn btn-outline" id="quick-history">
+                        <i class="fas fa-history"></i> View History
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Your Allergy Profile</h2>
+                <div id="dashboard-allergies">
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="margin-bottom: 10px;">Known Allergens:</h4>
+                        <ul class="allergen-list" id="dashboard-allergen-list">
+                            <!-- Allergens will be added here dynamically -->
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-outline" id="manage-allergies-btn">Manage Allergies</a>
+                </div>
+                <div id="no-allergies" style="display: none;">
+                    <p>You haven't added any allergies yet. Add allergies to get personalized medicine safety checks.</p>
+                    <a href="#" class="btn btn-primary" id="add-allergies-btn">Add Allergies</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Recent Medication Checks</h2>
+                <div id="recent-searches-container">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #f7f7fc;">
+                                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Medicine</th>
+                                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Date</th>
+                                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-searches">
+                                <!-- Recent searches will be added here dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="#" id="view-all-history" style="display: block; text-align: right; margin-top: 15px;">View all history</a>
+                </div>
+                <div id="no-searches" style="display: none;">
+                    <p>You haven't checked any medicines yet.</p>
+                    <a href="#" class="btn btn-primary" id="check-medicine-btn">Check Medicine Now</a>
+                </div>
+            </div>
+        </div>
+        
+       <!-- Updated Profile Section for indexn.html -->
+<div id="profile-content" style="display: none;">
+    <h1 style="margin-bottom: 25px;">My Profile</h1>
+  
+    <div class="card">
+      <h2 class="card-title">Account Information</h2>
+  
+      <div id="profile-display" style="display: grid; grid-template-columns: 150px 1fr; gap: 10px; margin-bottom: 20px;">
+        <div style="font-weight: 600;">Username:</div>
+        <div id="profile-username">JohnDoe</div>
+        <div style="font-weight: 600;">Email:</div>
+        <div id="profile-email">john.doe@example.com</div>
+        <div style="font-weight: 600;">Account Created:</div>
+        <div id="profile-created">April 1, 2025</div>
+        <div style="font-weight: 600;">Height (cm):</div>
+        <div id="profile-height">Not added yet</div>
+        <div style="font-weight: 600;">Weight (kg):</div>
+        <div id="profile-weight">Not added yet</div>
+        <div style="font-weight: 600;">Date of Birth:</div>
+        <div id="profile-dob">Not added yet</div>
+        <div style="font-weight: 600;">Phone Number:</div>
+        <div id="profile-phone">Not added yet</div>
+      </div>
+  
+      <div id="profile-edit" style="display: none;">
+        <form id="edit-profile-form" class="form-group">
+          <label class="form-label">Height (cm)</label>
+          <input type="number" class="form-control" id="edit-height" placeholder="Enter height">
+  
+          <label class="form-label">Weight (kg)</label>
+          <input type="number" class="form-control" id="edit-weight" placeholder="Enter weight">
+  
+          <label class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" id="edit-dob">
+  
+          <label class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="edit-phone" placeholder="Enter phone number">
+  
+          <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Save Changes</button>
+        </form>
+      </div>
+  
+      <button id="edit-profile-btn" class="btn btn-outline" style="margin-top: 20px;">Edit Profile</button>
+    </div>
+  
+    <!-- Rest of your My Allergies Section -->
+  </div>
+  
+            
+            <div class="card">
+                <h2 class="card-title">My Allergies</h2>
+                
+                <form id="add-allergy-form" style="margin-bottom: 30px;">
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 2;">
+                            <label for="allergen" class="form-label">Add New Allergen</label>
+                            <input type="text" class="form-control" id="allergen" name="allergen" placeholder="e.g., Penicillin, Lactose, etc." required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="severity" class="form-label">Severity</label>
+                            <select class="form-select" id="severity" name="severity" required>
+                                <option value="Mild">Mild</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Severe">Severe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Allergy</button>
+                </form>
+                
+                <div id="allergy-list-container">
+                    <h4>Current Allergies:</h4>
+                    <ul class="allergen-list" id="allergy-list">
+                        <!-- Allergies will be added here dynamically -->
+                    </ul>
+                </div>
+                <div id="no-allergy-list" style="display: none;">
+                    <p>You haven't added any allergies yet.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="search-content" style="display: none;">
+            <h1 style="margin-bottom: 25px;">Check Medicine Safety</h1>
+            
+            <div class="card">
+                <h2 class="card-title">Select Medicine to Check</h2>
+                <form id="search-form">
+                    <div class="form-group">
+                        <label for="medicine" class="form-label">Choose Medicine</label>
+                        <select class="form-select" id="medicine" name="medicine" required>
+                            <option value="">-- Select a medicine --</option>
+                            <option value="1">Acetaminophen (Tylenol)</option>
+                            <option value="2">Ibuprofen (Advil, Motrin)</option>
+                            <option value="3">Amoxicillin</option>
+                            <option value="4">Lisinopril</option>
+                            <option value="5">Atorvastatin (Lipitor)</option>
+                            <option value="6">Metformin</option>
+                            <option value="7">Levothyroxine (Synthroid)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Check Safety</button>
+                </form>
+            </div>
+            
+            <div id="results-container" style="display: none;">
+                <div class="card">
+                    <h2 class="card-title">Analysis Results</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;">
+                        <div>
+                            <h3 id="result-medicine-name" style="margin-bottom: 10px;">Medicine Name</h3>
+                            <div style="margin-bottom: 20px;">
+                                <strong>Ingredients:</strong>
+                                <p id="result-medicine-ingredients" style="margin-top: 5px;">Ingredients will be listed here</p>
+                            </div>
+                            
+                            <div id="result-safe" class="result-card result-safe" style="display: none;">
+                                <h4 class="result-text" style="color: var(--success);">SAFE TO USE</h4>
+                                <p>No allergens found that match your allergy profile.</p>
+                            </div>
+                            
+                            <div id="result-warning" class="result-card result-warning" style="display: none;">
+                                <h4 class="result-text" style="color: var(--warning);">USE WITH CAUTION</h4>
+                                <p>Contains ingredients you may be allergic to, but reactions are likely to be mild or moderate.</p>
+                            </div>
+                            
+                            <div id="result-danger" class="result-card result-danger" style="display: none;">
+                                <h4 class="result-text" style="color: var(--danger);">NOT RECOMMENDED</h4>
+                                <p>Contains ingredients you're severely allergic to. Consult with a healthcare provider before use.</p>
+                            </div>
+                            
+                            <div id="allergen-matches-container" style="margin-top: 20px; display: none;">
+                                <h4>Allergen Matches:</h4>
+                                <ul class="allergen-list" id="allergen-matches">
+                                    <!-- Allergen matches will be added here dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div id="result-icon-safe" class="result-icon" style="color: var(--success); display: none;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div id="result-icon-warning" class="result-icon" style="color: var(--warning); display: none;">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                         <div id="result-icon-danger" class="result-icon" style="color: var(--danger); display: none;">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <div class="tabs">
+                            <div class="tab active" data-tab="alternatives">Alternative Medicines</div>
+                            <div class="tab" data-tab="details">Detailed Information</div>
+                        </div>
+                        
+                        <div class="tab-content active" id="alternatives-content">
+                            <h4 style="margin-bottom: 15px;">Safer Alternatives</h4>
+                            <div id="alternatives-list">
+                                <p>Based on your allergy profile, here are some safer alternatives:</p>
+                                <ul id="alternatives" style="margin-left: 20px; margin-top: 10px;">
+                                    <!-- Alternatives will be added here dynamically -->
+                                </ul>
+                            </div>
+                            <div id="no-alternatives" style="display: none;">
+                                <p>No alternatives are needed as this medicine appears to be safe for you.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="details-content">
+                            <h4 style="margin-bottom: 15px;">Detailed Information</h4>
+                            <div id="medicine-details">
+                                <div style="margin-bottom: 15px;">
+                                    <strong>Manufacturer:</strong>
+                                    <span id="medicine-manufacturer">Manufacturer Name</span>
+                                </div>
+                                <div style="margin-bottom: 15px;">
+                                    <strong>Classification:</strong>
+                                    <span id="medicine-classification">Medicine Classification</span>
+                                </div>
+                                <div>
+                                    <strong>Known Side Effects:</strong>
+                                    <ul id="medicine-side-effects" style="margin-left: 20px; margin-top: 10px;">
+                                        <!-- Side effects will be added here dynamically -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="#" class="btn btn-outline" id="save-result">Save to History</a>
+                        <a href="#" class="btn btn-primary" id="new-search">Check Another Medicine</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="history-content" style="display: none;">
+            <h1 style="margin-bottom: 25px;">Search History</h1>
+            
+            <div class="card">
+                <h2 class="card-title">Previous Medicine Checks</h2>
+                
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #f7f7fc;">
+                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Medicine</th>
+                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Date</th>
+                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Result</th>
+                                <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-list">
+                            <!-- History items will be added here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="no-history" style="display: none;">
+                    <p>You haven't checked any medicines yet.</p>
+                    <a href="#" class="btn btn-primary" id="history-check-medicine-btn">Check Medicine Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-shield-virus"></i> MediCheck</h3>
+                    <p>MediCheck helps you stay safe by checking if your medications contain ingredients you're allergic to. Our mission is to reduce adverse drug reactions through awareness and education.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Check Medicine</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediCheck. All rights reserved.</p>
+                <p><small>Disclaimer: MediCheck is for informational purposes only and is not a substitute for professional medical advice.</small></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scriptt.js"></script>
+</body>
+</html>
